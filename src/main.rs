@@ -1,7 +1,8 @@
 use bracket_lib::prelude::*;
 
-// add the module to your project with mod
+// add the modules to your project with mod
 mod map;
+mod player;
 
 // declare a new module in source code
 mod prelude {
@@ -14,6 +15,8 @@ mod prelude {
     pub const SCREEN_HEIGHT: i32 = 50;
     // re-export the map as a public module available within prelude
     pub use crate::map::*;
+    // re-export the player as a public module available within prelude
+    pub use crate::player::*;
 }
 
 // make prelude available to the main scope
@@ -23,12 +26,17 @@ use prelude::*;
 struct State {
     /// The map.
     map: Map,
+    /// The player.
+    player: Player,
 }
 
 impl State {
     /// Constructor to initialise `State`.
     fn new() -> Self {
-        Self { map: Map::new() }
+        Self {
+            map: Map::new(),
+            player: Player::new(Point::new(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)),
+        }
     }
 }
 
@@ -39,7 +47,9 @@ impl GameState for State {
     /// * `ctx` - allows access to change the currently running bracket-terminal
     fn tick(&mut self, ctx: &mut BTerm) {
         ctx.cls();
+        self.player.update(ctx, &self.map);
         self.map.render(ctx);
+        self.player.render(ctx);
     }
 }
 

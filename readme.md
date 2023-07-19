@@ -1,6 +1,6 @@
-# Flappy Dragon
+# Rusty Roguelike
 
-Welcome to the "Flappy Dragon" Rust project! This project is a "Flappy Bird" clone using the Rust game programming library *bracket-lib*.
+Welcome to the "Rusty Roguelike" Rust project! This project is a roguelike dungeon crawler game built using the Rust game programming library *bracket-lib*.
 
 ## Prerequisites
 
@@ -33,29 +33,32 @@ To get started with this project, follow the steps below:
    The game should launch in a new window, have fun!
 
 <p align="center">
-  <img src="FlappyDragonDemo-0.1.4.gif" />
+  <img src="" />
 </p>
 
 ## Controls
 
 |   Key   |    Description    |
 | ------- | ----------------- |
-|   [P]   | To start the game |
-|   [Q]   | To quit the game  |
-| [SPACE] | To flap           |
+|  [UP]   | Move player north |
+| [DOWN]  | Move player south |
+| [LEFT]  | Move player west  |
+| [RIGHT] | Move player east  |
 
 ## To Do
-- [X] Improve code comments and add DocBlocks
-- [X] Adjust gravity, velocity, and game speed
-- [X] Add graphics for walls and dragon
-- [X] Make the game window smaller
-- [X] Make graphics bigger
-- [X] Use bracket-libs "flexible console" for smoother movement
-   - [X] smooth y movement
-   - [X] smooth x movement
-- [X] Add color (and flair) to the menus
-- [X] Animate the dragon
-- [ ] Maintain code commentary and documentation
-   - DocBlocks to follow correct sentence structure, beginning with a capital letter and ending with a full stop
-   - parameters are listed with bullet points and their name italicized
-   - comments do not start with a capital and need no punctuation
+- [X] Create a basic dungeon map
+- [X] Place the player and let them walk around
+- [ ] Spawn monsters, draw them, and let the player kill them by walking into them
+- [ ] Add health and a combat system that uses it
+- [ ] Add healing potions
+- [ ] Display a "game over" screen when the player dies
+- [ ] Add the Amulet of Yala to the level and let the player win by reaching it
+---
+- [ ] Add Fields-of-View
+- [ ] Add more interesting dungeon designs
+- [ ] Add some dungeon themes
+- [ ] Add multiple layers to the dungeon, with the Amulet on the last one
+- [ ] Add varied weapons to the game
+- [ ] Move to a data-driven design for spawning enemies
+- [ ] Consider some visual effects to make combat more visceral
+- [ ] Consider keeping score
