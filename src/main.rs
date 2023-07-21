@@ -2,6 +2,7 @@ use bracket_lib::prelude::*;
 
 // add the modules to your project with mod
 mod map;
+mod map_builder;
 mod player;
 
 // declare a new module in source code
@@ -13,9 +14,9 @@ mod prelude {
     pub const SCREEN_WIDTH: i32 = 80;
     /// The screen height.
     pub const SCREEN_HEIGHT: i32 = 50;
-    // re-export the map as a public module available within prelude
+    // re-export the crates as public modules available within prelude
     pub use crate::map::*;
-    // re-export the player as a public module available within prelude
+    pub use crate::map_builder::*;
     pub use crate::player::*;
 }
 
@@ -33,9 +34,11 @@ struct State {
 impl State {
     /// Constructor to initialise `State`.
     fn new() -> Self {
+        let mut rng = RandomNumberGenerator::new();
+        let map_builder = MapBuilder::new(&mut rng);
         Self {
-            map: Map::new(),
-            player: Player::new(Point::new(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)),
+            map: map_builder.map,
+            player: Player::new(map_builder.player_start),
         }
     }
 }
@@ -43,7 +46,7 @@ impl State {
 // implements the `GameState` trait for the `State` struct
 impl GameState for State {
     /// Required by `GameState`, it controls the program flow based on the current mode, and is the bridge between the game engine and the game.
-    /// * `&mut self` - allows access to change the `State` instance
+    /// * `&mut self` - allows access to change the current `State` instance
     /// * `ctx` - allows access to change the currently running bracket-terminal
     fn tick(&mut self, ctx: &mut BTerm) {
         ctx.cls();
