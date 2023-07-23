@@ -13,6 +13,11 @@ pub struct MapBuilder {
 }
 
 impl MapBuilder {
+    /// Constructor to initialise `MapBuilder`.
+    ///
+    /// The map generated is filled with walls, has a number of randomly genereated
+    /// rooms and corridors and has a player start location.
+    ///  * `rng` - allows access to the RandomNumberGenerator from bracket_random
     pub fn new(rng: &mut RandomNumberGenerator) -> Self {
         let mut mb = MapBuilder {
             map: Map::new(),

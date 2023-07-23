@@ -62,3 +62,7 @@ To get started with this project, follow the steps below:
 - [ ] Move to a data-driven design for spawning enemies
 - [ ] Consider some visual effects to make combat more visceral
 - [ ] Consider keeping score
+
+
+### Credits
+The dungeon floor, wall, and adventurer graphics were kindly provided by Buch for free, [here](https://opengameart.org/content/unfinished-dungeon-tileset). The potion and scroll graphics are from Melissa Krautheim’s [Fantasy Magic Set](https://opengameart.org/content/fantasy-magic-set). Weaponry is from Melle’s [Fantasy Sword Set](https://opengameart.org/content/fantasy-sword-set). Monster graphics are from the game Dungeon Crawl Stone Soup (CC0 license), packaged by Chris Hamons, [here](https://github.com/crawl/tiles).

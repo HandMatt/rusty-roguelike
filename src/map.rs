@@ -58,20 +58,36 @@ impl Map {
     }
 
     /// Renders the map using for loops to iterate through the y and x values
-    /// of the map, then uses match to determine tile type, and calls set to
+    /// of the camera boundaries, then uses match to determine tile type, and calls set to
     /// render each map tile.
     /// * `&self` - allows access to the current `Map` instance
     /// * `ctx` - allows to change the currently running bracket-terminal
-    pub fn render(&self, ctx: &mut BTerm) {
-        for y in 0..SCREEN_HEIGHT {
-            for x in 0..SCREEN_WIDTH {
-                let idx = map_idx(x, y);
-                match self.tiles[idx] {
-                    TileType::Floor => {
-                        ctx.set(x, y, YELLOW, BLACK, to_cp437('.'));
-                    }
-                    TileType::Wall => {
-                        ctx.set(x, y, GREEN, BLACK, to_cp437('#'));
+    /// * `camera` - allows access to the `Camera` instance
+    pub fn render(&self, ctx: &mut BTerm, camera: &Camera) {
+        ctx.set_active_console(0);
+        for y in camera.top_y..camera.bottom_y {
+            for x in camera.left_x..camera.right_x {
+                if self.in_bounds(Point::new(x, y)) {
+                    let idx = map_idx(x, y);
+                    match self.tiles[idx] {
+                        TileType::Floor => {
+                            ctx.set(
+                                x - camera.left_x,
+                                y - camera.top_y,
+                                WHITE,
+                                BLACK,
+                                to_cp437('.'),
+                            );
+                        }
+                        TileType::Wall => {
+                            ctx.set(
+                                x - camera.left_x,
+                                y - camera.top_y,
+                                WHITE,
+                                BLACK,
+                                to_cp437('#'),
+                            );
+                        }
                     }
                 }
             }
