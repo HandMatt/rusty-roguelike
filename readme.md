@@ -30,7 +30,7 @@ To get started with this project, follow the steps below:
    cargo run
    ```
 
-   The game should launch in a new window, have fun!
+   The game should launch in a new window. Have fun!
 
 <p align="center">
   <img src="" />
@@ -48,7 +48,7 @@ To get started with this project, follow the steps below:
 ## To Do
 - [X] Create a basic dungeon map
 - [X] Place the player and let them walk around
-- [ ] Spawn monsters, draw them, and let the player kill them by walking into them
+- [X] Spawn monsters, draw them, and let the player kill them by walking into them
 - [ ] Add health and a combat system that uses it
 - [ ] Add healing potions
 - [ ] Display a "game over" screen when the player dies

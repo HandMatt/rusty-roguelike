@@ -1,5 +1,5 @@
 use crate::prelude::*;
-// Maximum number of rooms in the dungeon.
+/// Maximum number of rooms in the dungeon.
 const NUM_ROOMS: usize = 20;
 
 /// The map builder.
@@ -13,11 +13,11 @@ pub struct MapBuilder {
 }
 
 impl MapBuilder {
-    /// Constructor to initialise `MapBuilder`.
+    /// Initialises the `MapBuilder`.  
     ///
-    /// The map generated is filled with walls, has a number of randomly genereated
+    /// The map generated is filled with walls, has a number of randomly generated
     /// rooms and corridors and has a player start location.
-    ///  * `rng` - allows access to the RandomNumberGenerator from bracket_random
+    ///  * `rng` - allows access to the RandomNumberGenerator from `bracket_random`
     pub fn new(rng: &mut RandomNumberGenerator) -> Self {
         let mut mb = MapBuilder {
             map: Map::new(),
@@ -41,9 +41,9 @@ impl MapBuilder {
         self.map.tiles.iter_mut().for_each(|t| *t = tile);
     }
 
-    /// Randomly place rooms on the map.
+    /// Builds randomly generated rooms on the map.
     /// * `&mut self` - allows access to change the current `MapBuilder` instance
-    /// * `rng` - allows access to the RandomNumberGenerator from bracket_random
+    /// * `rng` - allows access to the RandomNumberGenerator from `bracket_random`
     fn build_random_rooms(&mut self, rng: &mut RandomNumberGenerator) {
         // keep generating rooms until there are NUM_ROOMS rooms on the map
         while self.rooms.len() < NUM_ROOMS {
@@ -77,7 +77,7 @@ impl MapBuilder {
         }
     }
 
-    /// Create a vertical tunnel between two points on the map.
+    /// Creates a vertical tunnel between two points on the map.
     /// * `&mut self` - allows access to change the current `MapBuilder` instance
     /// * `y1` - vertical start point of the tunnel
     /// * `y2` - vertical end point of the tunnel
@@ -86,12 +86,12 @@ impl MapBuilder {
         use std::cmp::{max, min};
         for y in min(y1, y2)..=max(y1, y2) {
             if let Some(idx) = self.map.try_idx(Point::new(x, y)) {
-                self.map.tiles[idx as usize] = TileType::Floor;
+                self.map.tiles[idx] = TileType::Floor;
             }
         }
     }
 
-    /// Create a horizontal tunnel between two points on the map.
+    /// Creates a horizontal tunnel between two points on the map.
     /// * `&mut self` - allows access to change the current `MapBuilder` instance
     /// * `x1` - horizontal start point of the tunnel
     /// * `x2` - horizontal end point of the tunnel
@@ -100,14 +100,14 @@ impl MapBuilder {
         use std::cmp::{max, min};
         for x in min(x1, x2)..=max(x1, x2) {
             if let Some(idx) = self.map.try_idx(Point::new(x, y)) {
-                self.map.tiles[idx as usize] = TileType::Floor;
+                self.map.tiles[idx] = TileType::Floor;
             }
         }
     }
 
-    /// Generate complete corridors between rooms.
+    /// Generates complete corridors between rooms.
     /// * `&mut self` - allows access to change the current `MapBuilder` instance
-    /// * `rng` - allows access to the RandomNumberGenerator from bracket_random
+    /// * `rng` - allows access to the RandomNumberGenerator from `bracket_random`
     fn build_corridors(&mut self, rng: &mut RandomNumberGenerator) {
         let mut rooms = self.rooms.clone();
         // sort rooms by their center point to make sure adjacent rooms join to one another
