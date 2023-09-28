@@ -25,11 +25,11 @@ pub fn spawn_player(ecs: &mut World, pos: Point) {
 pub fn spawn_monster(ecs: &mut World, rng: &mut RandomNumberGenerator, pos: Point) {
     // create components by calling `push`. The components are separated in a tuple.
     ecs.push((
-        // add a `tag` component, indicating that this is an enemy.
+        // add a `tag` component, indicating that this is an enemy
         Enemy,
         // the monsters position
         pos,
-        // a `Render` component containing the monsters appearance 
+        // a `Render` component containing the monsters appearance
         Render {
             color: ColorPair::new(WHITE, BLACK),
             glyph: match rng.range(0, 4) {
@@ -43,5 +43,6 @@ pub fn spawn_monster(ecs: &mut World, rng: &mut RandomNumberGenerator, pos: Poin
                 _ => to_cp437('g'),
             },
         },
+        MovingRandomly {},
     ));
 }

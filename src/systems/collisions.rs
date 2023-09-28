@@ -16,7 +16,7 @@ pub fn collisions(ecs: &mut SubWorld, commands: &mut CommandBuffer) {
         .iter(ecs)
         // filter only positions that match the players
         .filter(|(_, pos)| **pos == player_pos)
-        // the first tuple entry is the Entity position is no longer needed 
+        // the first tuple entry is the Entity position is no longer needed
         .for_each(|(entity, _)| {
             // remove the specified entity from the world at the end of the frame
             commands.remove(*entity);

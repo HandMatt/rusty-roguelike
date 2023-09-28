@@ -1,7 +1,7 @@
 pub use crate::prelude::*;
 
 #[derive(Clone, Copy, Debug, PartialEq)]
-/// A Render struct describing how an entity appears on the screen.
+/// A render struct describing how an entity appears on the screen.
 pub struct Render {
     /// The `ColorPair` used to render the component, stores both foreground and background color in a single struct.
     pub color: ColorPair,
@@ -10,9 +10,20 @@ pub struct Render {
 }
 
 #[derive(Clone, Copy, Debug, PartialEq)]
-/// A Player struct containing no data, serving as a tag.
+/// A player struct containing no data, serving as a tag.
 pub struct Player;
 
 #[derive(Clone, Copy, Debug, PartialEq)]
-/// An Enemy struct containing no data, serving as a tag.
+/// An enemy struct containing no data, serving as a tag.
 pub struct Enemy;
+
+#[derive(Clone, Copy, Debug, PartialEq)]
+/// A random movement struct containing no data, serving as a tag.
+pub struct MovingRandomly;
+
+#[derive(Clone, Copy, Debug, PartialEq)]
+// An intent to move struct, has a reference to an entity and a location
+pub struct WantsToMove {
+    pub entity: Entity,
+    pub destination: Point,
+}
