@@ -33,7 +33,7 @@ To get started with this project, follow the steps below:
    The game should launch in a new window. Have fun!
 
 <p align="center">
-  <img src="" />
+  <img src="resources/showcase-commit8.gif" />
 </p>
 
 ## Controls
@@ -44,15 +44,17 @@ To get started with this project, follow the steps below:
 | [DOWN]  | Move player south |
 | [LEFT]  | Move player west  |
 | [RIGHT] | Move player east  |
+| [SPACE] | Wait and rest     |
 
 ## To Do
 - [X] Create a basic dungeon map
 - [X] Place the player and let them walk around
 - [X] Spawn monsters, draw them, and let the player kill them by walking into them
-- [ ] Add health and a combat system that uses it
+- [X] Add turn-based system 
+- [X] Add health and a combat system that uses it
+- [X] Display a "game over" screen when the player dies
+- [X] Add the Amulet of Yala to the level and let the player win by reaching it
 - [ ] Add healing potions
-- [ ] Display a "game over" screen when the player dies
-- [ ] Add the Amulet of Yala to the level and let the player win by reaching it
 ---
 - [ ] Add Fields-of-View
 - [ ] Add more interesting dungeon designs
@@ -63,6 +65,8 @@ To get started with this project, follow the steps below:
 - [ ] Consider some visual effects to make combat more visceral
 - [ ] Consider keeping score
 
+## Bugs
+- Monsters can enter the same tile if they move into it at the same time e.g. tile is empty so considered a valid destination, so both monsters move into it simultaneously
 
 ### Credits
 The dungeon floor, wall, and adventurer graphics were kindly provided by Buch for free, [here](https://opengameart.org/content/unfinished-dungeon-tileset). The potion and scroll graphics are from Melissa Krautheim’s [Fantasy Magic Set](https://opengameart.org/content/fantasy-magic-set). Weaponry is from Melle’s [Fantasy Sword Set](https://opengameart.org/content/fantasy-sword-set). Monster graphics are from the game Dungeon Crawl Stone Soup (CC0 license), packaged by Chris Hamons, [here](https://github.com/crawl/tiles).

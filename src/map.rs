@@ -57,4 +57,60 @@ impl Map {
             Some(map_idx(point.x, point.y))
         }
     }
+
+    // Determines if an exit from a tile is valid.
+    fn valid_exit(&self, loc: Point, delta: Point) -> Option<usize> {
+        // calculate the destination by adding the current position to the delta
+        let destination = loc + delta;
+        // check that the destination is on the map
+        if self.in_bounds(destination) {
+            // determine if you can enter the tile
+            if self.can_enter_tile(destination) {
+                // if you can enter the tile determine its array index and return Some(idx)
+                let idx = self.point2d_to_index(destination);
+                Some(idx)
+            } else {
+                // if you are not able to enter the tile return None
+                None
+            }
+        } else {
+            None
+        }
+    }
+}
+
+impl BaseMap for Map {
+    fn get_available_exits(&self, idx: usize) -> SmallVec<[(usize, f32); 10]> {
+        let mut exits = SmallVec::new();
+        let location = self.index_to_point2d(idx);
+
+        if let Some(idx) = self.valid_exit(location, Point::new(-1, 0)) {
+            exits.push((idx, 1.0))
+        }
+        if let Some(idx) = self.valid_exit(location, Point::new(1, 0)) {
+            exits.push((idx, 1.0))
+        }
+        if let Some(idx) = self.valid_exit(location, Point::new(0, -1)) {
+            exits.push((idx, 1.0))
+        }
+        if let Some(idx) = self.valid_exit(location, Point::new(0, 1)) {
+            exits.push((idx, 1.0))
+        }
+
+        exits
+    }
+
+    fn get_pathing_distance(&self, idx1: usize, idx2: usize) -> f32 {
+        DistanceAlg::Pythagoras.distance2d(self.index_to_point2d(idx1), self.index_to_point2d(idx2))
+    }
+}
+
+impl Algorithm2D for Map {
+    fn dimensions(&self) -> Point {
+        Point::new(SCREEN_WIDTH, SCREEN_HEIGHT)
+    }
+
+    fn in_bounds(&self, point: Point) -> bool {
+        self.in_bounds(point)
+    }
 }
