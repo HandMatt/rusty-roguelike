@@ -33,7 +33,7 @@ To get started with this project, follow the steps below:
    The game should launch in a new window. Have fun!
 
 <p align="center">
-  <img src="resources/showcase-commit8.gif" />
+  <img src="resources/showcase-commit9.gif" />
 </p>
 
 ## Controls
@@ -56,7 +56,7 @@ To get started with this project, follow the steps below:
 - [X] Add the Amulet of Yala to the level and let the player win by reaching it
 - [ ] Add healing potions
 ---
-- [ ] Add Fields-of-View
+- [X] Add Fields-of-View
 - [ ] Add more interesting dungeon designs
 - [ ] Add some dungeon themes
 - [ ] Add multiple layers to the dungeon, with the Amulet on the last one
