@@ -33,7 +33,7 @@ To get started with this project, follow the steps below:
    The game should launch in a new window. Have fun!
 
 <p align="center">
-  <img src="resources/showcase-commit9.gif" />
+  <img src="resources/showcase-commit10.gif" />
 </p>
 
 ## Controls
@@ -57,7 +57,7 @@ To get started with this project, follow the steps below:
 - [ ] Add healing potions
 ---
 - [X] Add Fields-of-View
-- [ ] Add more interesting dungeon designs
+- [X] Add more interesting dungeon designs
 - [ ] Add some dungeon themes
 - [ ] Add multiple layers to the dungeon, with the Amulet on the last one
 - [ ] Add varied weapons to the game
