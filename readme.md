@@ -33,7 +33,7 @@ To get started with this project, follow the steps below:
    The game should launch in a new window. Have fun!
 
 <p align="center">
-  <img src="resources/showcase-commit10.gif" />
+  <img src="resources/showcase-commit11.gif" />
 </p>
 
 ## Controls
@@ -54,16 +54,19 @@ To get started with this project, follow the steps below:
 - [X] Add health and a combat system that uses it
 - [X] Display a "game over" screen when the player dies
 - [X] Add the Amulet of Yala to the level and let the player win by reaching it
-- [ ] Add healing potions
----
 - [X] Add Fields-of-View
 - [X] Add more interesting dungeon designs
-- [ ] Add some dungeon themes
+- [X] Add some dungeon themes
+- [ ] Add healing potions
 - [ ] Add multiple layers to the dungeon, with the Amulet on the last one
 - [ ] Add varied weapons to the game
 - [ ] Move to a data-driven design for spawning enemies
 - [ ] Consider some visual effects to make combat more visceral
 - [ ] Consider keeping score
+---
+- [ ] add window and door tiles
+- [ ] refine FOV to more accurately reflect LOS
+- [ ] restrict map theme usage to specific map builder algorithms
 
 ## Bugs
 - Monsters can enter the same tile if they move into it at the same time e.g. tile is empty so considered a valid destination, so both monsters move into it simultaneously

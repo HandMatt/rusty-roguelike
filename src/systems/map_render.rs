@@ -6,7 +6,12 @@ use crate::prelude::*;
 /// Draws the map to the screen.
 /// * `map` - gives access to the map resource
 /// * `camera` - gives access to the camera resource
-pub fn map_render(ecs: &SubWorld, #[resource] map: &Map, #[resource] camera: &Camera) {
+pub fn map_render(
+    #[resource] map: &Map,
+    #[resource] camera: &Camera,
+    #[resource] theme: &Box<dyn MapTheme>,
+    ecs: &SubWorld,
+) {
     let mut fov = <&FieldOfView>::query().filter(component::<Player>());
     let mut draw_batch = DrawBatch::new();
     draw_batch.target(0);
@@ -25,14 +30,8 @@ pub fn map_render(ecs: &SubWorld, #[resource] map: &Map, #[resource] camera: &Ca
                 } else {
                     DARK_GREY
                 };
-                match map.tiles[idx] {
-                    TileType::Floor => {
-                        draw_batch.set(pt - offset, ColorPair::new(tint, BLACK), to_cp437('.'));
-                    }
-                    TileType::Wall => {
-                        draw_batch.set(pt - offset, ColorPair::new(tint, BLACK), to_cp437('#'));
-                    }
-                }
+                let glyph = theme.tile_to_render(map.tiles[idx]);
+                draw_batch.set(pt - offset, ColorPair::new(tint, BLACK), glyph);
             }
         }
     }
