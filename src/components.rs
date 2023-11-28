@@ -12,7 +12,9 @@ pub struct Render {
 
 #[derive(Clone, Copy, Debug, PartialEq)]
 /// A player struct containing no data, serving as a tag.
-pub struct Player;
+pub struct Player {
+    pub map_level: u32,
+}
 
 #[derive(Clone, Copy, Debug, PartialEq)]
 /// An enemy struct containing no data, serving as a tag.

@@ -9,6 +9,7 @@ pub enum TileType {
     Wall,
     /// Represents a floor tile.
     Floor,
+    Exit,
 }
 
 /// The game map.
@@ -46,7 +47,9 @@ impl Map {
     /// * `&self` - allows access to the current `Map` instance
     /// * `point` - the 2D position of the tile
     pub fn can_enter_tile(&self, point: Point) -> bool {
-        self.in_bounds(point) && self.tiles[map_idx(point.x, point.y)] == TileType::Floor
+        self.in_bounds(point)
+            && (self.tiles[map_idx(point.x, point.y)] == TileType::Floor
+                || self.tiles[map_idx(point.x, point.y)] == TileType::Exit)
     }
 
     /// Determines a tile's index coordinates.

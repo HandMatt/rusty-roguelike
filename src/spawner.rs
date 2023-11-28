@@ -7,7 +7,7 @@ pub fn spawn_player(ecs: &mut World, pos: Point) {
     // create components by calling `push`. The components are separated in a tuple.
     ecs.push((
         // add a `tag` component, indicating that this is the player
-        Player,
+        Player { map_level: 0 },
         // the players position
         pos,
         // a `Render` component containing the player's appearance

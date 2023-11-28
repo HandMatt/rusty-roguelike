@@ -33,7 +33,7 @@ To get started with this project, follow the steps below:
    The game should launch in a new window. Have fun!
 
 <p align="center">
-  <img src="resources/showcase-commit12.gif" />
+  <img src="resources/showcase-commit13.gif" />
 </p>
 
 ## Controls
@@ -60,15 +60,15 @@ To get started with this project, follow the steps below:
 - [X] Add more interesting dungeon designs
 - [X] Add some dungeon themes
 - [X] Add healing potions
-- [ ] Add multiple layers to the dungeon, with the Amulet on the last one
+- [X] Add multiple layers to the dungeon, with the Amulet on the last one
 - [ ] Add varied weapons to the game
-- [ ] Move to a data-driven design for spawning enemies
-- [ ] Consider some visual effects to make combat more visceral
-- [ ] Consider keeping score
 ---
 - [ ] add window and door tiles
 - [ ] refine FOV to more accurately reflect LOS
 - [ ] restrict map theme usage to specific map builder algorithms
+- [ ] Move to a data-driven design for spawning enemies
+- [ ] Consider some visual effects to make combat more visceral
+- [ ] Consider keeping score
 
 ## Bugs
 - Monsters can enter the same tile if they move into it at the same time e.g. tile is empty so considered a valid destination, so both monsters move into it simultaneously
