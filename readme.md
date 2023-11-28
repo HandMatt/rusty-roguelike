@@ -33,18 +33,20 @@ To get started with this project, follow the steps below:
    The game should launch in a new window. Have fun!
 
 <p align="center">
-  <img src="resources/showcase-commit11.gif" />
+  <img src="resources/showcase-commit12.gif" />
 </p>
 
 ## Controls
 
-|   Key   |    Description    |
-| ------- | ----------------- |
-|  [UP]   | Move player north |
-| [DOWN]  | Move player south |
-| [LEFT]  | Move player west  |
-| [RIGHT] | Move player east  |
-| [SPACE] | Wait and rest     |
+|   Key   |         Description         |
+| ------- | --------------------------- |
+|  [UP]   | Move/attack north direction |
+| [DOWN]  | Move/attack south direction |
+| [LEFT]  | Move/attack west direction  |
+| [RIGHT] | Move/attack east direction  |
+|   [G]   | Pickup item                 |
+| [1 - 9] | Use item                    | 
+| [SPACE] | Skip turn                   |
 
 ## To Do
 - [X] Create a basic dungeon map
@@ -57,7 +59,7 @@ To get started with this project, follow the steps below:
 - [X] Add Fields-of-View
 - [X] Add more interesting dungeon designs
 - [X] Add some dungeon themes
-- [ ] Add healing potions
+- [X] Add healing potions
 - [ ] Add multiple layers to the dungeon, with the Amulet on the last one
 - [ ] Add varied weapons to the game
 - [ ] Move to a data-driven design for spawning enemies
