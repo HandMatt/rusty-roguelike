@@ -33,7 +33,7 @@ To get started with this project, follow the steps below:
    The game should launch in a new window. Have fun!
 
 <p align="center">
-  <img src="resources/showcase-commit13.gif" />
+  <img src="resources/showcase-commit14.gif" />
 </p>
 
 ## Controls
@@ -61,12 +61,12 @@ To get started with this project, follow the steps below:
 - [X] Add some dungeon themes
 - [X] Add healing potions
 - [X] Add multiple layers to the dungeon, with the Amulet on the last one
-- [ ] Add varied weapons to the game
+- [X] Add varied weapons to the game
+- [X] Move to a data-driven design for spawning enemies
 ---
 - [ ] add window and door tiles
 - [ ] refine FOV to more accurately reflect LOS
 - [ ] restrict map theme usage to specific map builder algorithms
-- [ ] Move to a data-driven design for spawning enemies
 - [ ] Consider some visual effects to make combat more visceral
 - [ ] Consider keeping score
 
