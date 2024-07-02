@@ -1,1 +1,7 @@
 /target
+/resources
+!/resources/dungeonfont.png
+!/resources/showcase-commit-13.gif
+!/resources/template.ron
+/.vscode
+/rusty_roguelike.md
